@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.Common.Behaviours;
 
+// pattern -> chain of responsibility
 public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
 {
     private readonly ILogger _logger;

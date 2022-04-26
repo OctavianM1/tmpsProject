@@ -15,12 +15,14 @@ public class TodoItemsController : ApiControllerBase
     [HttpGet]
     public async Task<ActionResult<PaginatedList<TodoItemBriefDto>>> GetTodoItemsWithPagination([FromQuery] GetTodoItemsWithPaginationQuery query)
     {
+        // pattern -> mediator
         return await Mediator.Send(query);
     }
 
     [HttpPost]
     public async Task<ActionResult<int>> Create(CreateTodoItemCommand command)
     {
+        // pattern -> CQRS
         return await Mediator.Send(command);
     }
 

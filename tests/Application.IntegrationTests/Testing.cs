@@ -30,6 +30,7 @@ public class Testing
             .AddJsonFile("appsettings.json", true, true)
             .AddEnvironmentVariables();
 
+        // pattern -> builder
         _configuration = builder.Build();
 
         var startup = new Startup(_configuration);
@@ -70,6 +71,7 @@ public class Testing
 
     private static void EnsureDatabase()
     {
+        // pattern -> factory
         using var scope = _scopeFactory.CreateScope();
 
         var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();

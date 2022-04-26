@@ -12,6 +12,7 @@ public class CreateTodoItemCommand : IRequest<int>
     public string? Title { get; set; }
 }
 
+// pattern -> command
 public class CreateTodoItemCommandHandler : IRequestHandler<CreateTodoItemCommand, int>
 {
     private readonly IApplicationDbContext _context;

@@ -4,6 +4,7 @@ using CleanArchitecture.Application.Common.Interfaces;
 
 namespace CleanArchitecture.WebUI.Services;
 
+// patther -> facade
 public class CurrentUserService : ICurrentUserService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;

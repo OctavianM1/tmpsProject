@@ -4,5 +4,6 @@ namespace CleanArchitecture.Application.Common.Interfaces;
 
 public interface ICsvFileBuilder
 {
+    // pattern -> adapter
     byte[] BuildTodoItemsFile(IEnumerable<TodoItemRecord> records);
 }

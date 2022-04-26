@@ -28,6 +28,7 @@ public class Startup
 
         services.AddDatabaseDeveloperPageExceptionFilter();
 
+        // pattern -> singleton with DI
         services.AddSingleton<ICurrentUserService, CurrentUserService>();
 
         services.AddHttpContextAccessor();
@@ -116,6 +117,7 @@ public class Startup
             if (env.IsDevelopment())
             {
                     //spa.UseAngularCliServer(npmScript: "start");
+                    // pattern -> proxy
                     spa.UseProxyToSpaDevelopmentServer(Configuration["SpaBaseUrl"] ?? "http://localhost:4200");
             }
         });

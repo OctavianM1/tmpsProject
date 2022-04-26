@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.TodoItems.EventHandlers;
 
+// pattern -> observer
 public class TodoItemCompletedEventHandler : INotificationHandler<DomainEventNotification<TodoItemCompletedEvent>>
 {
     private readonly ILogger<TodoItemCompletedEventHandler> _logger;

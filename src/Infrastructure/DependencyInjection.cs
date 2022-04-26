@@ -17,11 +17,13 @@ public static class DependencyInjection
     {
         if (configuration.GetValue<bool>("UseInMemoryDatabase"))
         {
+            // pattern -> strategy
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase("CleanArchitectureDb"));
         }
         else
         {
+            // pattern -> strategy
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),

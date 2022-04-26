@@ -9,8 +9,10 @@ public class Program
 {
     public async static Task Main(string[] args)
     {
+        // pattern -> factory/builder
         var host = CreateHostBuilder(args).Build();
 
+        // pattern -> factory
         using (var scope = host.Services.CreateScope())
         {
             var services = scope.ServiceProvider;

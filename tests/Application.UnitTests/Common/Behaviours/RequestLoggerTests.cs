@@ -16,6 +16,7 @@ public class RequestLoggerTests
     [SetUp]
     public void Setup()
     {
+        // pattern -> prototype
         _logger = new Mock<ILogger<CreateTodoItemCommand>>();
         _currentUserService = new Mock<ICurrentUserService>();
         _identityService = new Mock<IIdentityService>();
