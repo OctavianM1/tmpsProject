@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: src/WebUI/Dockerfile
     environment:
-      - "UseInMemoryDatabase=false"
+      - "UseInMemoryDatabase=true"
       - "ConnectionStrings__DefaultConnection=Server=db;Database=CleanArchitectureDb;User=sa;Password=Your_password123;MultipleActiveResultSets=true"
       - "IdentityServer__Key__Type=Development"
       - "ASPNETCORE_Kestrel__Certificates__Default__Password=Your_password123"
@@ -15,14 +15,6 @@ services:
     volumes:
       - ~/.aspnet/https:/https:ro
     ports:
-      - "5000:5000"
-      - "5001:5001"
-    depends_on:
-      - db
+      - "5010:5010"
+      - "5011:5011"
     restart: on-failure
-
-  db:
-    image: "mcr.microsoft.com/mssql/server"
-    environment:
-      - "SA_PASSWORD=Your_password123"
-      - "ACCEPT_EULA=Y"

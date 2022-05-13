@@ -2,10 +2,10 @@
 
 # This stage is used for VS debugging on Docker
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-ENV ASPNETCORE_URLS=https://+:5001;http://+:5000
+ENV ASPNETCORE_URLS=https://+:5011;http://+:5010
 WORKDIR /app
-EXPOSE 5000
-EXPOSE 5001
+EXPOSE 5010
+EXPOSE 5011
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
